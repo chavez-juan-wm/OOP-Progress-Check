@@ -1,7 +1,7 @@
 <?php
     class Animal
     {
-        private $data;
+        private $data = array();
         public $name;
         protected $breed;
         public $sound;
