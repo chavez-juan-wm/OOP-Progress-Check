@@ -1,56 +1,48 @@
 <?php
-    class Animal
+    abstract class Animal
     {
-        private $data = array();
+        //Creates the attributes for the class
+        private $age = array();
         public $name;
-        protected $breed;
         public $sound;
+        static $longName = 20;
 
+        /* When the class is instantiated this code runs to set the values for the properties of name and breed
+         and it runs the sound method */
         public function __construct($name, $breed)
         {
             $this->name = $name;
             $this->breed = $breed;
             $this->sound();
-            $this->favorite();
         }
 
+        //Sets the value for age in the array
         public function __set($name, $value)
         {
-            $this->data[$name] = $value;
+            $this->age[$name] = $value;
         }
 
+        //Gets the age from the array
         public function __get($name)
         {
-            return $this->data[$name];
+            return $this->age[$name];
         }
 
-        public function sound()
+        //Every child class will have to use this method
+        abstract public function sound();
+
+        //This sets my favorite animal as Tootsie no matter what, the children classes can't change this because it's FINAL!
+        final public function favorite()
         {
-            $this->sound = "meow";
-            echo $this->name . " makes a " . $this->sound . " sound.";
+            echo "<br> Tootsie is my favorite animal!";
         }
 
-        private function favorite()
+        //Checks the length of the name and returns true or false depending on the length of the name
+        public static function nameLength($name)
         {
-            if($this->breed == "Siamese Cat")
-                echo "<br> " . $this->name . " is my favorite cat! <br>";
+            if(strlen($name) >= self::$longName)
+                return true;
             else
-                echo "<br> I like " . $this->name . ".";
-        }
-    }
-
-    class Dog extends Animal
-    {
-        public $friendly = "True";
-
-        public function __construct($name, $breed)
-        {
-            parent::__construct($name, $breed);
-        }
-
-        public function sound()
-        {
-            $this->sound = "bark";
-            echo $this->name . " makes a " . $this->sound . " sound.";
+                return false;
         }
     }
