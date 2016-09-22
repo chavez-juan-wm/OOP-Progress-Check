@@ -5,7 +5,7 @@
         private $age = array();
         public $name;
         public $sound;
-        static $longName = 20;
+        public static $longName = 20;
 
         /* When the class is instantiated this code runs to set the values for the properties of name and breed
          and it runs the sound method */

@@ -1,4 +1,4 @@
-# OOP-Progress-Check
+# OOP-Progress-Check #1
 
 This assignment will demonstrate your understanding of object-oriented programming with PHP using the following OOP principles:
 
@@ -10,4 +10,15 @@ This assignment will demonstrate your understanding of object-oriented programmi
     <li>__get & __set magic methods</li>
     <li>Class inheritance</li>
     <li>Override methods</li>
+</ul>
+
+# OOP-Progress-Check #2
+
+This assignment will demonstrate your understanding of object-oriented programming with PHP using the following OOP principles:
+
+<ul>
+    <li>Static Properties and Methods</li>
+    <li>Abstract Classes and Methods</li>
+    <li>Autoloading Classes and Final Keyword</li>
+    <li>Object Iteration</li>
 </ul>
